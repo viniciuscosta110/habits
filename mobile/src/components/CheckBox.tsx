@@ -26,7 +26,7 @@ export function CheckBox({ checked = false, title, ...rest }: CheckBoxProps) {
         <View className="h-8 w-8 bg-zinc-900" />
       )}
 
-      <Text className="ml-3 text-white text-base">
+      <Text className="ml-3 text-white text-base font-semibold">
         {title}
       </Text>
 
