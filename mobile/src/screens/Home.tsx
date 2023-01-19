@@ -1,4 +1,6 @@
 import { View, Text, ScrollView } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+
 import { HabitDay, DAY_SIZE } from "../components/HabitDay";
 import { Header } from "../components/Header";
 
@@ -11,6 +13,8 @@ const minimumSummaryDatesSize = 18 * 7 // 18 weeks to populate squares
 const amountOfDaysToFill = minimumSummaryDatesSize - calendarDays.length
 
 export function Home() {
+  const { navigate } = useNavigation()
+
   return (
     <View className="flex-1 bg-background p-8 pt-16">
       <Header />
@@ -39,7 +43,10 @@ export function Home() {
       >
         <View className="flex-row flex-wrap">
           {calendarDays.map((day, index) => 
-            <HabitDay key={day.toISOString()} />
+            <HabitDay 
+              key={day.toISOString()}
+              onPress={() => navigate('habit', { date: day.toISOString() })}
+            />
           )}
           {amountOfDaysToFill > 0 && Array(amountOfDaysToFill).fill(0).map((_, index) => {
             return (
