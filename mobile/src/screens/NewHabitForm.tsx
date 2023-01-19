@@ -35,7 +35,7 @@ export function NewHabitForm() {
         </Text>
 
         <TextInput 
-          className="h-12 pl-4 mt-3 text-white bg-zinc-800 rounded-lg focus:border-2 focus:border-green-600 "
+          className="h-12 pl-4 mt-3 text-white bg-zinc-900 rounded-lg border-2 border-zinc-800 focus:border-green-600 "
           placeholderTextColor={colors.zinc[400]}
           placeholder="Ex.: exrcícios, dormir bem etc..."
         />
