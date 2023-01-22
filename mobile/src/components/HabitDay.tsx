@@ -26,10 +26,10 @@ export function HabitDay({ amountDone = 0, amountOfHabits = 0, date, ...rest}: H
       className={clsx("m-1 border-2 rounded-lg", {
           ["bg-zinc-900 border-zinc-800"] : progressPercentage === 0,
           ["bg-violet-900 border-violet-700"] : progressPercentage > 0 && progressPercentage < 20,
-          ["bg-violet-800 border-violet-600"] : progressPercentage > 20 && progressPercentage < 40,
-          ["bg-violet-700 border-violet-500"] : progressPercentage > 40 && progressPercentage < 60,
-          ["bg-violet-600 border-violet-500"] : progressPercentage > 60 && progressPercentage < 80,
-          ["bg-violet-500 border-violet-400"] : progressPercentage > 80,
+          ["bg-violet-800 border-violet-600"] : progressPercentage >= 20 && progressPercentage < 40,
+          ["bg-violet-700 border-violet-500"] : progressPercentage >= 40 && progressPercentage < 60,
+          ["bg-violet-600 border-violet-500"] : progressPercentage >= 60 && progressPercentage < 80,
+          ["bg-violet-500 border-violet-400"] : progressPercentage >= 80,
           ["border-white border-4"] : isCurrentDay,
         } 
       )}
